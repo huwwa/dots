@@ -1,0 +1,67 @@
+colorscheme desert
+set nu rnu
+syntax on
+
+filetype plugin indent on
+set shiftwidth=4
+set textwidth=80
+set cpt+=i
+set expandtab
+
+set incsearch
+set cursorline
+set cursorlineopt=number
+set ignorecase smartcase
+set autoindent smartindent
+
+set hidden
+set wildmenu
+set noswapfile
+set wildoptions=fuzzy
+set wildignore=*.git/*
+
+"StatusLine
+"set laststatus=2
+"set statusline=%<%f\ %h%w%m%r%=%-14.(%l,%c%V%)\ %P
+
+runtime ftplugin/man.vim
+set keywordprg=:Man
+
+set shm+=I
+set shm-=S
+set noesckeys
+set history=200
+packadd! comment
+vmap <c-c> gc
+
+let mapleader = " "
+let maplocalleader = "\\"
+
+nnoremap <silent> <leader>h :term<CR>
+
+nnoremap <silent> _ :Ex<CR>
+nnoremap <leader>; q:k
+nnoremap <leader><leader> <C-^>
+
+vmap * "ay/\V<c-r>a<cr>
+vmap # "ay?\V<c-r>a<cr>
+
+nnoremap =ap ma=ap`a
+vnoremap <leader>y "+y
+vnoremap <leader>d "_d
+nnoremap Q <nop>
+nnoremap <leader>gs :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
+nnoremap <leader>s :s/\<<C-r><C-w>\>//gI<Left><Left><Left>
+
+nnoremap <silent> <leader>q :call quickfix#toggle()<LF>
+
+"emacs
+inoremap <c-f> <Right>
+inoremap <c-b> <Left>
+inoremap <c-e> <END>
+inoremap <c-a> <HOME>
+inoremap <c-k> <c-o>C
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWritePre * %s/\s\+$//e

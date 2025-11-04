@@ -1,0 +1,3 @@
+sxhkd &
+xset -r
+dwm

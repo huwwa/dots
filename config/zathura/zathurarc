@@ -1,0 +1,7 @@
+set recolor                     "true"
+
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map = zoom in
+map <BackSpace> zoom original

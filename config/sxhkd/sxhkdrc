@@ -1,0 +1,23 @@
+super + n
+ 	st -c test -g 40x6 -e ~/.local/bin/network.sh
+
+super + d
+	st -t launch -c test -g 40x10 -e ~/.local/bin/launch
+
+super + w
+	firefox --private-window
+
+super + {equal, minus, BackSpace}
+ 	~/.local/bin/volume.sh {up, down, toggle}
+
+super + shift + BackSpace
+	st -c test -g 40x4 -e ~/.local/bin/exit.sh
+
+Print 
+	maim -u ~/Pictures/screen/$(date +%s).png
+
+ctrl + Print 
+	~/.local/bin/image.sh
+
+super + Print
+	~/.local/bin/screencast.sh

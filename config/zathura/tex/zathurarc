@@ -1,0 +1,4 @@
+include "../zathurarc"
+
+#set highlight-color             "rgba(62, 143, 176, 0)"   # foam
+#set highlight-active-color      "rgba(156, 207, 216, 0)" # iris
