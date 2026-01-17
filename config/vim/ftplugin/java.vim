@@ -1,13 +1,12 @@
 vim9script
- 
+
 compiler javac
 
-def Compile()
+def CompileAndRun()
     w
     cd %:p:h
     Cmd javac % && java %:r
     cd -
 enddef
 
-nnoremap <buffer> <silent> <c-c>  <ScriptCmd>Compile()<Cr>
-inoremap <buffer> <c-c>  /**/<left><left>
+nmap <scriptcmd>CompileAndRun()<cr>

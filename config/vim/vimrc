@@ -1,67 +1,73 @@
-colorscheme desert
-set nu rnu
+colorscheme habamax
+set number relativenumber
 syntax on
 
-filetype plugin indent on
 set shiftwidth=4
 set textwidth=80
-set cpt+=i
 set expandtab
+filetype plugin indent on
+set autoindent smartindent
 
 set incsearch
 set cursorline
 set cursorlineopt=number
 set ignorecase smartcase
-set autoindent smartindent
 
+set noswapfile
 set hidden
 set wildmenu
-set noswapfile
 set wildoptions=fuzzy
 set wildignore=*.git/*
 
-"StatusLine
-"set laststatus=2
-"set statusline=%<%f\ %h%w%m%r%=%-14.(%l,%c%V%)\ %P
-
-runtime ftplugin/man.vim
-set keywordprg=:Man
-
 set shm+=I
 set shm-=S
-set noesckeys
-set history=200
-packadd! comment
-vmap <c-c> gc
+set history=500
 
-let mapleader = " "
-let maplocalleader = "\\"
+let mapleader = ' '
 
-nnoremap <silent> <leader>h :term<CR>
+nmap <silent><leader>h :term<cr>
 
-nnoremap <silent> _ :Ex<CR>
-nnoremap <leader>; q:k
-nnoremap <leader><leader> <C-^>
+nmap <silent> _ :Ex<cr>
+nmap <leader><leader> <C-^>
 
+vmap <c-r> c<c-r>=<c-r>"
 vmap * "ay/\V<c-r>a<cr>
 vmap # "ay?\V<c-r>a<cr>
 
-nnoremap =ap ma=ap`a
-vnoremap <leader>y "+y
-vnoremap <leader>d "_d
-nnoremap Q <nop>
+nmap =ap ma=ap`a
+vmap <leader>y "+y
+vmap <leader>d "_d
+nmap Q <nop>
+nmap - <nop>
+vmap <c-n> :m '>+1<CR>gv
+vmap <c-p> :m '<-2<CR>gv
+
 nnoremap <leader>gs :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
 nnoremap <leader>s :s/\<<C-r><C-w>\>//gI<Left><Left><Left>
 
-nnoremap <silent> <leader>q :call quickfix#toggle()<LF>
+nmap <leader>p :<up><cr>
+cmap <c-p> <up>
+cmap <c-n> <down>
+
+map  <F4> :bd!<cr>
+map  <F7> :cp <cr>
+map  <F8> :cn <cr>
 
 "emacs
-inoremap <c-f> <Right>
-inoremap <c-b> <Left>
-inoremap <c-e> <END>
-inoremap <c-a> <HOME>
-inoremap <c-k> <c-o>C
+nmap <c-f> <nop>
+nmap <c-b> <nop>
+inoremap <c-f> <right>
+inoremap <c-b> <left>
+inoremap <c-d> <del>
+inoremap <c-k> <c-o>D
 
-highlight ExtraWhitespace ctermbg=red guibg=red
+if has('android')
+    set path=.,$PREFIX/include,,
+endif
+
+runtime ftplugin/man.vim
+packadd! comment
+vmap <c-c> gc
+
+highlight ExtraWhitespace ctermbg=204 guibg=#eb6f92
 match ExtraWhitespace /\s\+$/
-autocmd BufWritePre * %s/\s\+$//e

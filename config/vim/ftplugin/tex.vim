@@ -2,7 +2,7 @@ vim9script
 
 compiler tex
 
-def Compile()
+def CompileAndRun()
     w
     cd %:p:h
     silent make
@@ -26,14 +26,11 @@ def Openpdf()
     const cmd  = [proc, opta, optb, optc, optd, opte, optf]
 
     if !filereadable('master.tex')
-    job_start(cmd, {"err_cb": OnError})
-    else 
-    job_start([proc, opta, optb,  optc, "master.pdf", opte, optf], {"err_cb": OnError})
+        job_start(cmd, {"err_cb": OnError})
+    else
+        job_start([proc, opta, optb,  optc, "master.pdf", opte, optf], {"err_cb": OnError})
     endif
 enddef
 
-
-nnoremap <buffer> <localleader>c <ScriptCmd>Compile()<Cr>
-nnoremap <buffer> <localleader>r <ScriptCmd>Openpdf()<Cr>
-vnoremap <buffer> <silent><leader>c :norm I%<cr>
-##nnoremap <buffer> <localleader>s :so ~/.vim/ftplugin/tex.vim <Cr>
+nmap <buffer><silent><leader>. <ScriptCmd>CompileAndRun()<Cr>
+nmap <buffer><silent><leader>r <ScriptCmd>Openpdf()<Cr>

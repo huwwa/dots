@@ -1,12 +1,11 @@
-vim9script 
-
+vim9script
 
 if exists("g:current_compiler")
 	finish
 endif
 g:current_compiler = "latex"
 
-if !filereadable('makefile') && !filereadable('Makefile') 
+if !filereadable('makefile') && !filereadable('Makefile')
     CompilerSet makeprg=pdflatex\ -interaction=nonstopmode\ -synctex=-1\ %:p
 endif
 
