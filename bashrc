@@ -13,6 +13,7 @@ alias mv='mv -iv'
 alias ..='cd ..'
 alias str='python -m http.server'
 alias grep='grep --color=auto'
+alias diff='diff -u --color=always'
 
 # xbps
 alias i='doas xbps-install -S'
