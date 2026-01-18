@@ -58,6 +58,7 @@ nmap <c-f> <nop>
 nmap <c-b> <nop>
 inoremap <c-f> <right>
 inoremap <c-b> <left>
+inoremap <c-e> <end>
 inoremap <c-d> <del>
 inoremap <c-k> <c-o>D
 
@@ -66,6 +67,7 @@ if has('android')
 endif
 
 runtime ftplugin/man.vim
+set keywordprg=:Man
 packadd! comment
 vmap <c-c> gc
 
