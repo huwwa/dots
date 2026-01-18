@@ -12,7 +12,7 @@ alias ll='ls -lh'
 alias mv='mv -iv'
 alias ..='cd ..'
 alias str='python -m http.server'
-alias grep='grep --color=auto --exclude=tags --exclude-dir=.git --exclude='*.{tar*,zip}''
+alias grep='grep --color=auto'
 
 # xbps
 alias i='doas xbps-install -S'
@@ -23,14 +23,8 @@ alias r='doas xbps-remove -R'
 #apps
 alias vi='vim'
 
-#bash
-#set -o vi 
-#bind -m vi-command 'Control-l: clear-screen'
-#bind -m vi-insert  'Control-l: clear-screen'
 export HISTCONTROL=ignoreboth
-export HISTSIZE=5000
-export HISTIGNORE="clear:cd:cd -:cd ..:exit:date:* --help:ls:ll:ping*"
+export HISTSIZE=500
+export HISTIGNORE="clear:cd:cd -:cd ..:exit:date:ls:ll"
 
-export PS1="\W > "
-
-. "$HOME/.local/bin/env"
+PS1="[\u@\[\e[0;37m\]\h \[\e[0m\]\W]$ "

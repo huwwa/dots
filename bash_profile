@@ -11,3 +11,5 @@ export EDITOR="vim-x11"
 doas loadkeys $HOME/.config/loadkeys/loadkeysrc
 
 [ "$(tty)" == "/dev/tty1" ] && startx
+
+. "$HOME/.local/bin/env"
