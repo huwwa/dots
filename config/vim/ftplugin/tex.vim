@@ -32,5 +32,5 @@ def Openpdf()
     endif
 enddef
 
-nmap <buffer><silent><leader>. <ScriptCmd>CompileAndRun()<Cr>
-nmap <buffer><silent><leader>r <ScriptCmd>Openpdf()<Cr>
+nmap <buffer><silent><leader>. <scriptcmd>CompileAndRun()<cr>
+nmap <buffer><silent><leader>r <scriptcmd>Openpdf()<cr>

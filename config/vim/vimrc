@@ -34,7 +34,7 @@ vmap <c-r> c<c-r>=<c-r>"
 vmap * "ay/\V<c-r>a<cr>
 vmap # "ay?\V<c-r>a<cr>
 
-nmap =ap ma=ap`a
+nnoremap =ap ma=ap`a
 vmap <leader>y "+y
 vmap <leader>d "_d
 nmap Q <nop>

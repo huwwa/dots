@@ -7,4 +7,4 @@ def CompileAndRun()
     cd -
 enddef
 
-nmap <buffer><silent><leader>. <ScriptCmd>CompileAndRun()<cr>
+nmap <buffer><silent><leader>. <scriptcmd>CompileAndRun()<cr>
